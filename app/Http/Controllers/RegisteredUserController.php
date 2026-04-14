@@ -11,20 +11,20 @@ class RegisteredUserController extends Controller
 {
     public function create()
     {
-        return view("auth.register");
+        return view('auth.register');
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'min:2'],
-            'email'=> ['required','email','max:255', Rule::unique('users', 'email')],
+            'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
             'password' => ['required', 'string', 'min:8', 'max:255'],
         ]);
 
         $user = User::create([
-            'name'=> $request->name,
-            'email'=> $request->email,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => $request->password,
         ]);
 

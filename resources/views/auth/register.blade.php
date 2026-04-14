@@ -22,7 +22,7 @@
             </div> --}}
 
             <button type="submit" class=" btn mt-2 w-full">
-                Register
+                Create Account
             </button>
         </form>
     </x-form>
